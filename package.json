@@ -1,0 +1,24 @@
+{
+  "name": "momnt",
+  "version": "1.0.0",
+  "description": "MOMNT-App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eb46/Moments-App.git"
+  },
+  "author": "Eric Bondoc, David Lance, Leland Shirley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eb46/Moments-App/issues"
+  },
+  "homepage": "https://github.com/eb46/Moments-App#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.19"
+  }
+}
