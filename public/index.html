@@ -1,5 +1,5 @@
-momnt<!DOCTYPE html>
-<html lang="en" ng-App="momntApp">
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-App="momntApp">
   <head>
     <link rel="stylesheet" href="/css/app.css" />
     <meta charset="UTF-8" />
@@ -15,7 +15,7 @@ momnt<!DOCTYPE html>
     <h1>MOMNT</h1>
     {{ctrl.message | uppercase}}
     <hr />
-    <form ng-submit="ctrl.addNewMomnt()">
+    <form ng-submit="ctrl.addMomnt()">
       <input
         type="text"
         placeholder="whats the moment"
@@ -35,7 +35,16 @@ momnt<!DOCTYPE html>
       <input type="submit" value="add momnt" />
     </form>
     <ul>
-      <li ng-repeat="m in ctrl.moments"></li>
+      <li ng-repeat="m in ctrl.moments">
+        <div class="sydney">
+          <h3>{{m.moment}}</h3>
+          <p>{{m.description}}</p>
+          <hr />
+          <b>{{m.location}}</b><br />
+
+          <img ng-src="{{m.image}}" alt="{{m.moment}}" /><br />
+        </div>
+      </li>
     </ul>
   </body>
 </html>

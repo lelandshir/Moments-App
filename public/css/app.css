@@ -1,3 +1,23 @@
 body {
-  background-color: pink;
+  background-color: lightpink;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+.sydney {
+  border: 1px solid black;
+  border-radius: 1em;
+  background-color: white;
+  max-width: 33%;
+  padding: 10px;
+  text-align: center;
+}
+
+img {
+  border-radius: 1em;
+  max-width: 75%;
+  border: 1px solid black;
 }
