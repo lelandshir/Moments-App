@@ -1,12 +1,12 @@
-# MOMNT-App
+# MOMNT APP
 
-#####TO-DOS & Questions:
-In no particular order:
-ToDos
+### TO-DOS & Questions:
 
-- npm i moment for human readable dates
-- test routes with postman
-- user schema
+- In no particular order:
+
+1. npm i moment for human readable dates
+1. test routes with postman
+1. user schema
 
 ### MOMNT Project Folder Set Up
 
