@@ -10,8 +10,8 @@ app.controller(`MainController`, [
         method: `PUT`,
         url: `/momnt/` + m._id,
         data: {
-          momnt: this.updatedMomnt,
-          date: this.updatedDate,
+          moment: this.updatedMoment,
+          location: this.updatedLocation,
           description: this.updatedDescription,
           image: this.updatedImage,
         },
@@ -44,37 +44,37 @@ app.controller(`MainController`, [
     //declare moments index function
     this.getMomnts = () => {
       $http({
-        url: `/momnts`,
+        url: `/momnt`,
         method: `GET`,
       }).then(
-        (response) => {
-          this.momnts = response.data;
-          console.log(response.data);
+        (res) => {
+          this.moments = res.data; //changed to moments (from momnt)
+          console.log(res.data);
         },
-        (error) => {
-          console.log(error);
+        (err) => {
+          console.log(err);
         }
       );
     };
 
-    this.addNewMomnt = () => {
+    this.addMomnt = () => {
       $http({
-        url: `/momnts`,
+        // url: `/momnt`,
         method: `POST`,
         data: {
-          momnt: this.updatedMomnt,
-          date: this.updatedDate,
-          description: this.updatedDescription,
-          image: this.updatedImage,
+          moment: this.moment,
+          location: this.location,
+          description: this.description,
+          image: this.image,
         },
       }).then(
-        (response) => {
-          console.log(response);
-          this.createdMomnt = response.data;
+        (res) => {
+          console.log(res);
+          this.createdMomnt = res.data;
           this.getMomnts();
         },
-        (error) => {
-          console.log(error);
+        (err) => {
+          console.log(err);
         }
       );
     };
