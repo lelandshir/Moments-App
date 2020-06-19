@@ -37,3 +37,12 @@
 ### Javascript
 
 - set up basic CRUD routes; 2 way-data binding for the moment schema/model/url
+
+# Bugs:
+
+### The form/ng-submit="ctrl.addMomnt()" - res.data returned empty string; logged no errors
+
+### The Fix:
+
+- I added -action="/momnt"- and -method="POST"- to the form tag in index.html; it worked, but cause a new issue. It went from posting nothing to posting the same data twice (with unique ID's).
+- I fixed this by commenting out -url: "/momnt"- in app.js in the addMomnt function so that the form had all posting power; both were making a post req, only needed one of them to.
