@@ -1,13 +1,14 @@
 //Declare and Require Mongoose
-const mongoose = require(`mongoose`).set(`debug`, true);
+const mongoose = require(`mongoose`)
 
 //MOMNT Schema
 const momntSchema = new mongoose.Schema({
-  moment: { type: String, required: true },
-  location: { type: String, required: true },
-  description: { type: String, required: true },
-  image: { type: String, required: true },
+  moment: String,
+  location: String,
+  description: String,
+  image: String
 });
+
 //Declare MOMNT schema and sub-db name
 const Momnt = mongoose.model(`Moment`, momntSchema);
 //Export Schema

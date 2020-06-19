@@ -1,6 +1,6 @@
 //Declare & Require Dependencies
 const express = require(`express`);
-const mongoose = require(`mongoose`).set(`debug`, true);
+const mongoose = require(`mongoose`)
 // const session = require("express-session");
 const db = mongoose.connection; //gauge error and success messages
 const app = express();
@@ -10,7 +10,8 @@ const PORT = process.env.PORT || 3005;
 const MONGODB_URI = process.env.MONGODB_URI;
 
 //Middleware Stack
-app.use(express.static(`public`)).use(express.urlencoded({ extended: false }));
+app.use(express.static(`public`))
+  .use(express.json())
 // .use(
 //   session({
 //     secret: process.env.SECRET,
