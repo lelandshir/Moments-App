@@ -40,7 +40,7 @@
 
 # Bugs:
 
-### The form/ng-submit="ctrl.addMomnt()" - res.data returned empty string; logged no errors
+### Bug:
 
 ### The Fix:
 
