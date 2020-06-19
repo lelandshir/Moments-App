@@ -15,30 +15,30 @@
     <h1>MOMNT</h1>
     {{ctrl.message | uppercase}}
     <hr />
-    <form ng-submit="ctrl.addMomnt()" method="POST" action="/momnt">
+    <form ng-submit="ctrl.addMomnt()">
       <input
         type="text"
-        name="moment"
         placeholder="whats the moment"
         ng-model="ctrl.moment"
+        required
       />
       <input
         type="text"
-        name="location"
         placeholder="where was it"
         ng-model="ctrl.location"
+        required
       />
       <input
         type="text"
-        name="description"
         placeholder="tell me about it"
         ng-model="ctrl.description"
+        required
       />
       <input
         type="text"
-        name="image"
         placeholder="image URL"
         ng-model="ctrl.image"
+        required
       />
       <input type="submit" value="add momnt" />
     </form>

@@ -1,7 +1,5 @@
 const app = angular.module(`momntApp`, []);
-app.controller(`MainController`, [
-  `$http`,
-  function ($http) {
+app.controller(`MainController`, [`$http`, function($http) {
     this.message = `Marking MOMNTS since 2020`;
     this.createdMomnt = "";
 
@@ -59,18 +57,17 @@ app.controller(`MainController`, [
 
     this.addMomnt = () => {
       $http({
-        // url: `/momnt`,
+        url: `/momnt`,
         method: `POST`,
         data: {
           moment: this.moment,
           location: this.location,
           description: this.description,
           image: this.image,
-        },
+        }
       }).then(
         (res) => {
-          console.log(res);
-          this.createdMomnt = res.data;
+          console.log(res.data);
           this.getMomnts();
         },
         (err) => {
