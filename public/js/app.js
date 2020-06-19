@@ -10,9 +10,10 @@ app.controller(`MainController`, [
         method: `PUT`,
         url: `/momnt/` + m._id,
         data: {
-          brand: this.updateBrand,
-          type: this.updatedType,
-          abv: this.updatedABV,
+          momnt: this.updatedMomnt,
+          date: this.updatedDate,
+          description: this.updatedDescription,
+          image: this.updatedImage,
         },
       }).then(
         (res) => {
