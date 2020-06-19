@@ -59,7 +59,7 @@ app.controller(`MainController`, [
 
     this.addMomnt = () => {
       $http({
-        url: `/momnt`,
+        // url: `/momnt`,
         method: `POST`,
         data: {
           moment: this.moment,
