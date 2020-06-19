@@ -4,6 +4,7 @@ const mongoose = require(`mongoose`).set(`debug`, true);
 //MOMNT Schema
 const momntSchema = new mongoose.Schema({
   momnt: { type: String, required: true },
+  location: { type: String, required: true },
   date: { type: Date, required: true },
   description: { type: String, required: true },
   image: { type: String, required: true },
