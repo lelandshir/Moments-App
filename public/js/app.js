@@ -10,8 +10,9 @@ app.controller(`MainController`, [
         method: `PUT`,
         url: `/momnt/` + m._id,
         data: {
-          momnt: this.updatedMomnt,
-          date: this.updatedDate,
+          moment: this.updatedMoment,
+          location: this.updatedLocation,
+          // date: this.updatedDate,
           description: this.updatedDescription,
           image: this.updatedImage,
         },
@@ -44,7 +45,7 @@ app.controller(`MainController`, [
     //declare moments index function
     this.getMomnts = () => {
       $http({
-        url: `/momnts`,
+        url: `/momnt`,
         method: `GET`,
       }).then(
         (response) => {
@@ -59,13 +60,14 @@ app.controller(`MainController`, [
 
     this.addNewMomnt = () => {
       $http({
-        url: `/momnts`,
+        url: `/momnt`,
         method: `POST`,
         data: {
-          momnt: this.updatedMomnt,
-          date: this.updatedDate,
-          description: this.updatedDescription,
-          image: this.updatedImage,
+          moment: this.moment,
+          location: this.location,
+          // date: this.date,
+          description: this.description,
+          image: this.image,
         },
       }).then(
         (response) => {
