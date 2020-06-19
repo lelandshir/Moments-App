@@ -31,8 +31,8 @@ mongoose.connect(MONGODB_URI, {
 });
 
 //Declare & Use the momnt controller
-// const momntController = require(`./controllers/momnt.js`);
-// app.use(`/momnt`, momntController);
+const momntController = require(`./controllers/momnt.js`);
+app.use(`/momnt`, momntController);
 
 //DB Error & Success Messages ES6(f)
 db.on(`error`, (err) =>
