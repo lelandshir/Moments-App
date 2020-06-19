@@ -1,8 +1,7 @@
 //Declare & Require Dependencies
 const express = require(`express`);
-const methodOverride = require(`method-override`);
 const mongoose = require(`mongoose`).set(`debug`, true);
-const session = require("express-session");
+// const session = require("express-session");
 const db = mongoose.connection; //gauge error and success messages
 const app = express();
 require(`dotenv`).config();
@@ -11,17 +10,14 @@ const PORT = process.env.PORT || 3005;
 const MONGODB_URI = process.env.MONGODB_URI;
 
 //Middleware Stack
-app
-  .use(express.static(`public`))
-  .use(express.urlencoded({ extended: false }))
-  .use(methodOverride(`_method`))
-  .use(
-    session({
-      secret: process.env.SECRET,
-      resave: false,
-      saveUninitialized: false,
-    })
-  );
+app.use(express.static(`public`)).use(express.urlencoded({ extended: false }));
+// .use(
+//   session({
+//     secret: process.env.SECRET,
+//     resave: false,
+//     saveUninitialized: false,
+//   })
+// );
 //Connect to Mongo
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,

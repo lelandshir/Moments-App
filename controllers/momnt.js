@@ -5,14 +5,15 @@ const router = express.Router();
 const Momnt = require(`../models/momnt.js`);
 
 //SEED ROUTE
-// router.get(`/seed`, (req, res) => {
-//   Momnt.create({
-//     momnt: String,
-//     date: Date,
-//     description: String,
-//     image: String,
-//   });
-// });
+router.get(`/seed`, (req, res) => {
+  Momnt.create({
+    momnt: `Watched SpaceX Dragon 2 Launch`,
+    location: `Florida`,
+    date: `May 30th, 2020`,
+    description: `the first private company to send astronauts to the International Space Station (Dragon 2 in 2020)`,
+    image: `https://www.thespacereview.com/archive/3966a.jpg`,
+  });
+});
 
 //UPDATE - PUT ROUTE
 router.put(`/:id`, (req, res) => {
