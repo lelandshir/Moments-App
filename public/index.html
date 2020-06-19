@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+momnt<!DOCTYPE html>
 <html lang="en" ng-App="momntApp">
   <head>
     <link rel="stylesheet" href="/css/app.css" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <script
       src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"
       charset="utf-8"
@@ -15,5 +14,28 @@
   <body ng-controller="MainController as ctrl">
     <h1>MOMNT</h1>
     {{ctrl.message | uppercase}}
+    <hr />
+    <form ng-submit="ctrl.addNewMomnt()">
+      <input
+        type="text"
+        placeholder="whats the moment"
+        ng-model="ctrl.moment"
+      /><br />
+      <input
+        type="text"
+        placeholder="where was it"
+        ng-model="ctrl.location"
+      /><br />
+      <input
+        type="text"
+        placeholder="tell me about it"
+        ng-model="ctrl.description"
+      /><br />
+      <input type="text" placeholder="image URL" ng-model="ctrl.image" /><br />
+      <input type="submit" value="add momnt" />
+    </form>
+    <ul>
+      <li ng-repeat="m in ctrl.moments"></li>
+    </ul>
   </body>
 </html>
