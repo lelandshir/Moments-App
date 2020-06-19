@@ -42,6 +42,8 @@
 
 ### Bug:
 
+- The form/ng-submit="ctrl.addMomnt()" - res.data returned empty string; logged no errors
+
 ### The Fix:
 
 - I added -action="/momnt"- and -method="POST"- to the form tag in index.html; it worked, but cause a new issue. It went from posting nothing to posting the same data twice (with unique ID's).
