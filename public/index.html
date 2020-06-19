@@ -15,36 +15,46 @@
     <h1>MOMNT</h1>
     {{ctrl.message | uppercase}}
     <hr />
-    <form ng-submit="ctrl.addMomnt()">
+    <form ng-submit="ctrl.addMomnt()" method="POST" action="/momnt">
       <input
         type="text"
+        name="moment"
         placeholder="whats the moment"
         ng-model="ctrl.moment"
-      /><br />
+      />
       <input
         type="text"
+        name="location"
         placeholder="where was it"
         ng-model="ctrl.location"
-      /><br />
+      />
       <input
         type="text"
+        name="description"
         placeholder="tell me about it"
         ng-model="ctrl.description"
-      /><br />
-      <input type="text" placeholder="image URL" ng-model="ctrl.image" /><br />
+      />
+      <input
+        type="text"
+        name="image"
+        placeholder="image URL"
+        ng-model="ctrl.image"
+      />
       <input type="submit" value="add momnt" />
     </form>
-    <ul>
-      <li ng-repeat="m in ctrl.moments">
-        <div class="sydney">
-          <h3>{{m.moment}}</h3>
-          <p>{{m.description}}</p>
-          <hr />
-          <b>{{m.location}}</b><br />
-
-          <img ng-src="{{m.image}}" alt="{{m.moment}}" /><br />
-        </div>
-      </li>
-    </ul>
+    <hr />
+    <div class="container">
+      <ul>
+        <li ng-repeat="m in ctrl.moments">
+          <div class="sydney">
+            <h3>{{m.moment}}</h3>
+            <p>{{m.description}}</p>
+            <hr />
+            <b>{{m.location}}</b><br />
+            <img ng-src="{{m.image}}" alt="{{m.moment}}" /><br />
+          </div>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>

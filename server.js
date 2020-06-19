@@ -18,6 +18,11 @@ app.use(express.static(`public`)).use(express.urlencoded({ extended: false }));
 //     saveUninitialized: false,
 //   })
 // );
+
+//Declare & Use the momnt controller
+const momntController = require(`./controllers/momnt.js`);
+app.use(`/momnt`, momntController);
+
 //Connect to Mongo
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
@@ -25,10 +30,6 @@ mongoose.connect(MONGODB_URI, {
   useFindAndModify: false,
   autoIndex: false,
 });
-
-//Declare & Use the momnt controller
-const momntController = require(`./controllers/momnt.js`);
-app.use(`/momnt`, momntController);
 
 //DB Error & Success Messages ES6(f)
 db.on(`error`, (err) =>
